@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Indicaê! | Recomendador de Filmes</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+<nav class="navbar" id="navbar">
+  <div class="nav-left">
+    <img src="/static/logo.png" alt="Logo" class="logo">
+  </div>
+
+  <div class="nav-right"></div>
+</nav>
+  <div class="container">
+    <header class="hero">
+  <div class="hero-backdrop"></div>
+
+  <div class="hero-content">
+    <span class="badge">Recomendador de filmes</span>
+
+    <h1>Indicaê!</h1>
+
+    <p>
+      Escolha filmes que você gosta, filtre por plataformas de streaming
+      e receba recomendações parecidas com visual moderno e rápido.
+    </p>
+
+    <div class="hero-actions">
+      <button class="hero-btn hero-btn-primary" id="heroStartBtn">Começar agora</button>
+      <button class="hero-btn hero-btn-secondary" id="heroSummaryBtn">Ver resumo com IA</button>
+    </div>
+  </div>
+</header>
+    <section class="card reveal-section">
+      <h2>1. Pesquise filmes</h2>
+
+      <div class="search-row">
+        <input id="searchInput" type="text" placeholder="Ex: Interestelar" />
+        <button id="searchBtn">Buscar</button>
+      </div>
+
+      <div class="filters-block">
+        <h3>Filtrar por streaming</h3>
+        <p class="section-subtitle">
+          O sistema deve recomendar apenas filmes disponíveis nas plataformas escolhidas.
+        </p>
+
+        <div class="streaming-options">
+          <label class="streaming-chip">
+            <input type="checkbox" value="8" class="streamingFilter" />
+            <span>Netflix</span>
+          </label>
+
+          <label class="streaming-chip">
+            <input type="checkbox" value="9" class="streamingFilter" />
+            <span>Prime Video</span>
+          </label>
+
+          <label class="streaming-chip">
+            <input type="checkbox" value="337" class="streamingFilter" />
+            <span>Disney+</span>
+          </label>
+
+          <label class="streaming-chip">
+            <input type="checkbox" value="1899" class="streamingFilter" />
+            <span>Max</span>
+          </label>
+
+          <label class="streaming-chip">
+            <input type="checkbox" value="350" class="streamingFilter" />
+            <span>Apple TV+</span>
+          </label>
+
+          <label class="streaming-chip">
+            <input type="checkbox" value="531" class="streamingFilter" />
+            <span>Paramount+</span>
+          </label>
+        </div>
+      </div>
+
+      <div id="searchStatus" class="status-message"></div>
+      
+      <div id="searchResults" class="movie-grid search-grid"></div>
+    </section>
+
+    <section class="card reveal-section">
+      <div class="section-header">
+        <div>
+          <h2>2. Seus filmes escolhidos</h2>
+          <p class="section-subtitle">
+            Selecione quantos filmes quiser para melhorar a recomendação.
+          </p>
+        </div>
+      </div>
+
+      <div id="selectedMovies" class="movie-grid selected-grid"></div>
+
+      <div class="action-row">
+        <button id="recommendBtn" class="primary">Gerar recomendações</button>
+      </div>
+    </section>
+
+    <section class="card reveal-section">
+      <div class="section-header">
+        <div>
+          <h2>3. Recomendações</h2>
+          <p class="section-subtitle">
+            Esperamos que goste das recomendações!
+          </p>
+        </div>
+      </div>
+
+      <div id="recommendations" class="movie-grid recommendations-grid"></div>
+    </section>
+
+    <section class="card reveal-section">
+      <div class="section-header">
+        <div>
+          <h2>4. Resumo com IA</h2>
+          <p class="section-subtitle">
+            Digite qualquer filme para receber um resumo rápido.
+          </p>
+        </div>
+      </div>
+
+      <div class="search-row">
+        <input id="summaryInput" type="text" placeholder="Ex: Clube da Luta" />
+        <button id="summaryBtn">Resumir filme</button>
+      </div>
+
+      <div id="summaryResult" class="summary-box"></div>
+    </section>
+  </div>
+  <div id="movieModal" class="movie-modal-overlay">
+  <div class="movie-modal">
+    <button id="closeMovieModal" class="movie-modal-close">×</button>
+
+    <div id="movieModalContent" class="movie-modal-content"></div>
+  </div>
+</div>
+  <script src="/static/script.js"></script>
+</body>
+</html>
