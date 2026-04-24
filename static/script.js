@@ -22,9 +22,7 @@ let scrollObserver = null;
 
 const HISTORY_KEY = 'movie_recommender_history_v1';
 
-/* =========================
-   HELPERS
-========================= */
+
 
 function truncate(text, max = 220) {
   if (!text) return 'Sem descrição disponível.';
@@ -106,9 +104,7 @@ function saveRecommendationHistory(selected, recommended, providers) {
   saveLocalData(HISTORY_KEY, history);
 }
 
-/* =========================
-   UI / ANIMAÇÕES
-========================= */
+
 
 function setupNavbarOnScroll() {
   if (!navbar) return;
@@ -184,9 +180,7 @@ function applyScrollAnimations() {
   });
 }
 
-/* =========================
-   CARDS
-========================= */
+
 
 function movieCard(movie, actionType = 'add') {
   const button = actionType === 'add'
@@ -270,9 +264,7 @@ function closeMovieModal() {
   movieModal.classList.remove('show');
   document.body.style.overflow = '';
 }
-/* =========================
-   BUSCA
-========================= */
+
 
 async function searchMovies() {
   const query = searchInput?.value.trim() || '';
@@ -307,9 +299,7 @@ async function searchMovies() {
   }
 }
 
-/* =========================
-   FILMES SELECIONADOS
-========================= */
+
 
 function addMovie(id) {
   const movie = searchCache.find((item) => item.id === id);
@@ -367,9 +357,7 @@ function renderSelectedMovies() {
   applyScrollAnimations();
 }
 
-/* =========================
-   RECOMENDAÇÕES
-========================= */
+
 
 async function recommendMovies() {
   if (selectedMovies.length === 0) {
@@ -419,9 +407,7 @@ async function recommendMovies() {
   }
 }
 
-/* =========================
-   RESUMO
-========================= */
+
 
 async function summarizeMovie() {
   const query = summaryInput?.value.trim() || '';
@@ -475,9 +461,7 @@ async function summarizeMovie() {
   }
 }
 
-/* =========================
-   EVENTOS
-========================= */
+
 
 if (searchBtn) {
   searchBtn.addEventListener('click', searchMovies);
@@ -553,9 +537,7 @@ document.addEventListener('keydown', (event) => {
     closeMovieModal();
   }
 });
-/* =========================
-   FUNÇÕES GLOBAIS
-========================= */
+
 
 window.addMovie = addMovie;
 window.removeMovie = removeMovie;
